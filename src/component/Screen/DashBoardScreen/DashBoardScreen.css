@@ -1,0 +1,284 @@
+.DasBoard-Main-Container {
+  width: 100%;
+  height: 87vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  /* border: 1px solid blue; */
+
+  margin-top: 80px;
+}
+
+.DasBoard-Main-Container-Header {
+  width: 100%;
+
+  display: flex;
+  /* flex: 1; */
+  flex-direction: row;
+  /* border: 1px solid red; */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.mainHeading {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+}
+.dash-board-main-container {
+  /* border: 2px solid green; */
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-direction: row;
+}
+
+.side-bar-Menu {
+  flex: 0.2;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  background-color: #fff4f4;
+  padding: 15px 0px 0px 5px;
+}
+.RecordContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #eff3f4;
+}
+.Button-container {
+  /* border: 1px solid red; */
+  width: 100%;
+  display: flex;
+  flex: 0.1;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+}
+.buttonNotes {
+  background-color: transparent;
+
+  padding: 15px;
+  margin: 0;
+  outline: none;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* width: 200px; */
+}
+.Cicon {
+  margin-right: 10px;
+}
+.buttonNotes:hover {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+.buttonActive {
+  color: orange;
+}
+.record-show-contianer {
+  display: flex;
+  flex: 1;
+
+  flex-direction: column;
+  /* border: 3px solid orange; */
+}
+.recordContainer {
+  /* border: 3px solid orange; */
+  padding: 10px;
+  height: 360px;
+  overflow-y: scroll;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+  /* scroll-behavior: smooth; */
+}
+.RecordHeaderTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.recordItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: azure;
+  border-radius: 40px;
+  box-shadow: black 1px 1px 10px;
+  margin: 20px;
+  padding: 5px;
+}
+.recordItemboxChild {
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  align-items: center;
+  padding: 2px 7px 0.5px 7px;
+}
+.recordItemboxChild > p,
+h6 {
+  display: block;
+  margin-bottom: 0;
+}
+.recordItemboxChild > h6 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.recordItemboxChild > p {
+  font-size: 14px;
+}
+.deleteEditContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.EditAndDeleteButton {
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  border-radius: 0%;
+  margin-left: 10px;
+  background-color: transparent;
+}
+.EditAndDeleteButton:hover {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+.ActionIcon {
+  color: orange;
+}
+.ActionIcon:hover {
+  width: 20px;
+  height: 20px;
+}
+.modalStyling {
+  background-color: blue;
+  display: flex;
+  width: 100%;
+}
+.modalStyling1 {
+  background-color: rgba(51, 51, 51, 0.5);
+}
+.FormContanier {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #eff3f4;
+  padding: 20px;
+}
+.SelectInputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.SelectContainer {
+  border-bottom: 1px solid #000;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.SelectContainer > select {
+  border: none;
+  box-shadow: none;
+  outline: 0px;
+}
+
+.submitButton {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 60%;
+  background-color: orange;
+  color: black;
+}
+.select,
+.input {
+  /* width: 100%; */
+  padding-left: 12px;
+  margin-top: 2px;
+  font-size: 15px;
+  color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+  .dash-board-main-container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+  }
+  .side-bar-Menu {
+    flex: 1;
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+    /* height: 70vh; */
+  }
+  .recordItem {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    border-radius: 0%;
+  }
+  .recordItemboxChild {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+  }
+  .SelectInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .SelectContainer {
+    border-bottom: 1px solid #000;
+    /* margin-right: 20px; */
+    margin-right: 2px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .select,
+  .input {
+    /* width: 100%; */
+    padding: 4px;
+    margin-top: 2px;
+
+    font-size: 14px;
+    color: #000;
+  }
+  .submitButton {
+    margin-top: 10px;
+    padding: 5px;
+    width: 100%;
+    background-color: orange;
+    color: black;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+}
+@media only screen and (max-width: 1200px) {
+}

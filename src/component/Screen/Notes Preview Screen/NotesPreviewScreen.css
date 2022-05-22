@@ -1,0 +1,133 @@
+/*  */
+.feature {
+  /* background: url("./Assets/light_bulb.jpg"); */
+  margin-top: 80px;
+  /* background: url("./Screen/Assets/light_bulb.jpg"); */
+  background-position: top right;
+  background-size: cover;
+  height: 300px;
+  background-color: #dd845a;
+  color: white;
+  text-shadow: 1px 1px 8px black;
+  padding-left: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.container-slider {
+  display: flex;
+  flex-direction: row;
+}
+
+.ButtonYearContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+}
+.ButtonYear {
+  background-color: #4bb66d;
+  color: white;
+  text-shadow: 1px 1px 8px black;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* margin: 10px; */
+  /* display: inline-block; */
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.YearHeadingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.note-paper-container {
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+}
+.note-paper-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 45px;
+  justify-content: space-around;
+}
+.semester-heading {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.note-paper-col {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 7px 11px 10px -4px rgba(0, 0, 0, 0.46);
+  -webkit-box-shadow: 7px 11px 10px -4px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 7px 11px 10px -4px rgba(0, 0, 0, 0.46);
+  width: 45%;
+  padding: 20px;
+}
+
+.note-paper-col > h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3d73af;
+}
+
+.note-paper-col > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: circle;
+}
+.note-paper-col > ul > li {
+  margin-top: 10px;
+}
+.note-paper-col > ul > li > a {
+  text-decoration: none;
+  color: black;
+}
+.note-paper-col > ul > li > a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+@media only screen and (max-width: 600px) {
+  .ButtonYearContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ButtonYear {
+    margin-bottom: 30px;
+    padding: 10px;
+  }
+  .note-paper-container {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+  }
+  .note-paper-row {
+    flex-direction: column;
+
+    padding: 20px;
+  }
+  .note-paper-col {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 10px;
+  }
+}

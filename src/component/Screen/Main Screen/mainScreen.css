@@ -1,0 +1,75 @@
+.section-main {
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.MainScreenBody-container {
+  background-color: #242426;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  align-content: flex-end;
+  padding: 100px;
+}
+.Box-main {
+  flex: 0.33;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.Box-image {
+  width: 100px;
+  height: 100px;
+}
+.Box-heading {
+  font-size: 20px;
+  font-weight: bold;
+  color: #3d73af;
+}
+.Box-paragraph {
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.link {
+  padding: 10px 20px;
+  margin: 10px;
+  display: inline-block;
+  color: white;
+  background: #3e77bc;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 992px) {
+  .MainScreenBody-container {
+    padding: 30px;
+  }
+  .main-card--cointainer {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .main-card--cointainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+  }
+}
+@media only screen and (max-width: 600px) {
+  .MainScreenBody-container {
+    flex-direction: column;
+
+    padding: 30px;
+  }
+}
