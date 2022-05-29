@@ -79,7 +79,7 @@ const NotesPreviewScreen = () => {
     (item) => item.Semester === FilterBySemesterHeading[0].semester[1]
   );
 
-  // console.log(FilterBySemester1[0]);
+  console.log(FilterBySemester1[0]);
 
   return (
     <>

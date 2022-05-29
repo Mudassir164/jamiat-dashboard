@@ -24,8 +24,8 @@ function App() {
         <Header />
       </div>
       <Routes>
-        {/* <Route path="/" element={<LoginScreen />} /> */}
-        <Route path="/" element={<DashBoardScreen />} />
+        <Route path="/" element={<LoginScreen />} />
+        <Route path="/DashBoardScreen" element={<DashBoardScreen />} />
         <Route path="/MainScreen" element={<MainScreen />} />
 
         <Route path="/notes" element={<NotesScreen />} />

@@ -1,5 +1,6 @@
 import React from "react";
 import "./LogInScreen.css";
+import { Link } from "react-router-dom";
 const LoginScreen = () => {
   return (
     <section className="LoginSection">
@@ -14,7 +15,9 @@ const LoginScreen = () => {
           <i class="zmdi zmdi-lock zmdi-hc-lg"></i>
         </div>
 
-        <button type="submit">Log In</button>
+        <Link className="link link-two shrink-on-hover" to="/DashBoardScreen">
+          Log In
+        </Link>
       </div>
     </section>
   );
