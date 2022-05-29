@@ -3,59 +3,142 @@ import React, { useState } from "react";
 import { dummyDataForNotesAndBook } from "../../Assets/dummyData";
 import Book from "../../Modals/book";
 import Notes from "../../Modals/Notes";
-import { StoreData } from "../../dataBase/db";
+import { StoreData, Updatedata } from "../../dataBase/db";
 import PastPaper from "../../Modals/PastPaper";
 
 const Form = ({ activeState, handleClose, editData, actionEditOrAdd }) => {
-  const YearData = ["First Year", "Second Year", "Third Year", "Fourth Year"];
-
-  const SemesterData = [
-    "First Semester",
-    "Second Semester",
-    "Third Semester",
-    "Fourth Semester",
-    "Fifth Semester",
-    "Sixth Semester",
-    "Seventh Semester",
-    "Last Semester",
+  const dummyDataForButton = [
+    {
+      semester: ["First Semester", "Second Semester"],
+      year: "First Year",
+    },
+    {
+      semester: ["Third Semester", "Fourth Semester"],
+      year: "Second Year",
+    },
+    {
+      semester: ["Fifth Semester", "Sixth Semester"],
+      year: "Third Year",
+    },
+    {
+      semester: ["Seventh Semester", "Last Semester"],
+      year: "Final Year",
+    },
   ];
   const departmentName = [];
   dummyDataForNotesAndBook.forEach((item) => {
     departmentName.push(item.name);
   });
+  const YearData = ["First Year", "Second Year", "Third Year", "Final Year"];
+  // dummyDataForButton.forEach((item) => {
+  //   YearData.push(item.year);
+  // });
+
+  console.log(YearData);
 
   const [Department, setDepartment] = useState(
     actionEditOrAdd === "edit" ? editData.Department : departmentName[0]
   );
-  const [Semester, setSemester] = useState(
-    actionEditOrAdd === "edit" ? editData.Semester : SemesterData[0]
-  );
   const [Year, setYear] = useState(
     actionEditOrAdd === "edit" ? editData.Year : YearData[0]
   );
+  const dummy = dummyDataForButton.filter((item) => item.year === Year);
+  const SemesterData = dummy[0].semester;
+  const [Semester, setSemester] = useState(
+    actionEditOrAdd === "edit" ? editData.Semester : SemesterData[0]
+  );
+
   const [Name, setName] = useState(
     actionEditOrAdd === "edit" ? editData.name : ""
   );
   const [Url, setUrl] = useState(
     actionEditOrAdd === "edit" ? editData.Url : ""
   );
+  const [imgUrl, setImgUrl] = useState(
+    actionEditOrAdd === "edit" ? editData.imageUrl : ""
+  );
 
   const onSubmitHandler = () => {
-    if (activeState === "Notes") {
-      const data = new Notes(Name, Url, Department, Semester, Year);
-      StoreData(data, activeState);
-    }
+    if (actionEditOrAdd === "edit") {
+      if (activeState === "Notes") {
+        if (
+          Name === "" ||
+          Url === "" ||
+          Department === "" ||
+          Semester === "" ||
+          Year === ""
+        ) {
+          alert("Please fill all the fields");
+          return;
+        }
+        const data = new Notes(Name, Url, Department, Semester, Year);
+        Updatedata(editData.id, data, activeState);
+      }
 
-    if (activeState === "Books") {
-      const data = new Book(Name, Url);
-      console.log(data);
-      StoreData(data, activeState);
-    }
+      if (activeState === "Books") {
+        if (Name === "" || Url === "" || imgUrl === "") {
+          alert("Please fill all the fields");
+          return;
+        }
+        const data = new Book(Name, Url, imgUrl);
 
-    if (activeState === "Past Paper") {
-      const data = new PastPaper(Name, Url, Department, Semester, Year);
-      StoreData(data, activeState);
-      console.log(data);
+        Updatedata(editData.id, data, activeState);
+      }
+
+      if (activeState === "Past Paper") {
+        if (
+          Name === "" ||
+          Url === "" ||
+          Department === "" ||
+          Semester === "" ||
+          Year === ""
+        ) {
+          alert("Please fill all the fields");
+          return;
+        }
+        const data = new PastPaper(Name, Url, Department, Semester, Year);
+        Updatedata(editData.id, data, activeState);
+      }
+    } else {
+      if (activeState === "Notes") {
+        if (
+          Name === "" ||
+          Url === "" ||
+          Department === "" ||
+          Semester === "" ||
+          Year === ""
+        ) {
+          alert("Please fill all the fields");
+          return;
+        }
+        const data = new Notes(Name, Url, Department, Semester, Year);
+        StoreData(data, activeState);
+      }
+
+      if (activeState === "Books") {
+        if (Name === "" || Url === "" || imgUrl === "") {
+          alert("Please fill all the fields");
+          return;
+        }
+        const data = new Book(Name, Url, imgUrl);
+
+        StoreData(data, activeState);
+      }
+
+      if (activeState === "Past Paper") {
+        if (
+          Name === "" ||
+          Url === "" ||
+          Department === "" ||
+          Semester === "" ||
+          Year === ""
+        ) {
+          alert("Please fill all the fields");
+          return;
+        }
+        const data = new PastPaper(Name, Url, Department, Semester, Year);
+        StoreData(data, activeState);
+      }
     }
     handleClose();
   };
@@ -92,6 +175,15 @@ const Form = ({ activeState, handleClose, editData, actionEditOrAdd }) => {
           setValue={setName}
           title={`${activeState} Name`}
         />
+        {activeState === "Books" ? (
+          <NameAndUrlInput
+            value={imgUrl}
+            setValue={setImgUrl}
+            title={"Image Url"}
+          />
+        ) : (
+          ""
+        )}
         <NameAndUrlInput value={Url} setValue={setUrl} title="URL" />
       </div>
       <button className="submitButton" onClick={onSubmitHandler}>

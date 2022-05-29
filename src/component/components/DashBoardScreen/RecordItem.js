@@ -43,7 +43,7 @@ function RecordItem({
     }
     if (action === "Books") {
       setEditData({
-        ...new Notes(data.BookName, data.Url),
+        ...new Book(data.BookName, data.Url, data.imageUrl),
         id: id,
       });
     }
@@ -53,7 +53,6 @@ function RecordItem({
 
   const onDeleteHandler = () => {
     const deleteConfirm = async () => {
-      window.location.reload();
       await DeleteRecord(data.id, action);
     };
     window.confirm("Are you sure you wish to delete this item?")
@@ -75,7 +74,10 @@ function RecordItem({
       )}
 
       {action === "Books" && (
-        <RecordItemBox title="Book Name" name={data.BookName} />
+        <>
+          <RecordItemBox title="Book Name" name={data.BookName} />
+          <RecordItemBox title="Book Image Url" name={data.imageUrl} />
+        </>
       )}
       <RecordItemBox title="Url" name={data.Url} isUrl={true} />
 

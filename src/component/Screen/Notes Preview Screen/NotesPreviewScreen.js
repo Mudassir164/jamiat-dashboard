@@ -122,24 +122,4 @@ const NotesPreviewScreen = () => {
   );
 };
 
-const NotesBoxBook = (props) => {
-  return (
-    <div className="NotesBoxChild">
-      <h5>{props.boxTitle}</h5>
-      <ul>
-        {props.UrlAndName.map((item, index) => (
-          <li key={index}>
-            <a href={item.BookUrl}>{item.BookName}</a>
-            <a href={item.BookUrl}>{item.BookName}</a>
-            <a href={item.BookUrl}>{item.BookName}</a>
-            <a href={item.BookUrl}>{item.BookName}</a>
-            <a href={item.BookUrl}>{item.BookName}</a>
-            <a href={item.BookUrl}>{item.BookName}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
 export default NotesPreviewScreen;

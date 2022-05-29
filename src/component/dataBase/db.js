@@ -20,6 +20,7 @@ export const FetchExpenses = async (folder) => {
       const getObject = {
         id: key,
         BookName: responce.data[key].name,
+        imageUrl: responce.data[key].imageUrl,
         Url: responce.data[key].Url,
       };
 
@@ -51,9 +52,10 @@ export const FetchExpenses = async (folder) => {
 };
 
 export const DeleteRecord = async (id, folder) => {
+  console.log(id, folder);
   await axios.delete(BACKEND_URL + `/${folder}/${id}.json`);
 };
 
-export const UpdateExpense = async (id, expenseData) => {
-  return axios.put(BACKEND_URL + `/expenses/${id}.json`, expenseData);
+export const Updatedata = async (id, folder, expenseData) => {
+  await axios.put(BACKEND_URL + `/${folder}/${id}.json`, expenseData);
 };
